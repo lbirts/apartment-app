@@ -1,0 +1,18 @@
+<h1>Create a new apartment!</h1>
+
+<form action="/apartments" method="post">
+
+<label>Address:</label>
+<input type="text" name="apartment[address]">
+
+  <h5> Existing Tenants </h3>
+    <% @tenants.each do |tenant| %>
+        <input type="checkbox" name="apartment[tenant_ids][]" value="<%=tenant.id%>"> <%=tenant.name%>
+    <% end %>
+<br><br>
+<label>Add a new tenant:</label>
+<input type="text" name="tenant[name]" placeholder="Write tenant's name here">
+
+<input type="submit">
+
+</form>
